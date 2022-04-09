@@ -1,7 +1,5 @@
-import { createApp } from "vue";
-import App from "./App.vue";
 import "@/assets/flexible";
-import router from "./router";
+import { createApp } from "vue";
 import {
   Popup,
   Form,
@@ -9,12 +7,14 @@ import {
   CellGroup,
   Button,
   Overlay,
-  Notify,
   Collapse,
   CollapseItem,
   Swipe,
   SwipeItem,
 } from "vant";
+import App from "./App.vue";
+import router from "./router";
+
 const app = createApp(App);
 app.use(router);
 app.use(Popup);
