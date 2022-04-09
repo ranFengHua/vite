@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path' // 主要用于alias文件路径别名
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path"; // 主要用于alias文件路径别名
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
@@ -14,15 +14,15 @@ export default defineConfig({
    * 在生产中服务时的基本公共路径。
    * @default '/'
    */
-  base: './',
+  base: "./",
   /**
    * 与“根”相关的目录，构建输出将放在其中。如果目录存在，它将在构建之前被删除。
    * @default 'dist'
    */
-  outDir: 'dist',
+  outDir: "dist",
   resolve: {
     alias: {
-      '@': resolve(__dirname, '.', 'src'),
+      "@": resolve(__dirname, ".", "src"),
     },
   },
   // 反向代理
@@ -33,12 +33,11 @@ export default defineConfig({
     // 是否开启 https
     https: false,
     proxy: {
-      '/api': {
-        target: 'localhost:9090',
+      "/api": {
+        target: "localhost:9090",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
-})
-
+});
